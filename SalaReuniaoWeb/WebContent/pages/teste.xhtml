@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="corpo">
+
+		<!-- start: PAGE HEADER -->
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- start: PAGE TITLE & BREADCRUMB -->
+				<ol class="breadcrumb">
+					<li><i class="clip-grid-6"></i> <a href="#"> Tables </a></li>
+					<li class="active">Data Table</li>
+					<li class="search-box">
+						<div class="sidebar-search">
+						</div>
+					</li>
+				</ol>
+				<div class="page-header">
+					<h1>
+						Data Tables <small>dynamic tables samples</small>
+					</h1>
+				</div>
+				<!-- end: PAGE TITLE & BREADCRUMB -->
+			</div>
+		</div>
+		<!-- end: PAGE HEADER -->
+
+		<h:form id="form">
+			<h:outputText value="Numero da Celula:" />
+			<br />
+			<br />
+			<h:inputText value="#{celulaController.celula.nrCelula}" />
+			<br />
+			<br />
+			<h:commandButton id="salvar" value="Salvar"
+				action="#{celulaController.salvar}" />
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+</html>
