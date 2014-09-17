@@ -32,18 +32,22 @@
 				<i class="fa fa-external-link-square"></i>
 			</div>
 		
-			<h:dataTable id="lista" value="#{celulaController.listCelula}" class="table table-condensed table-hover"	var="celula">
+			<h:dataTable id="lista" value="#{celulaController.pesquisarCelulas}" class="table table-condensed table-hover"	var="celula">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
 					<h:outputText value="#{celula.nrCelula}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Editar</f:facet>
-					<h:commandButton id="editar" class="fa fa-edit" />	
+					<h:commandButton id="editar" value="editar" >
+						
+					</h:commandButton>	
 				</h:column>
 				<h:column>
 					<f:facet name="header">Excluir</f:facet>
-					<h:commandButton id="excluir" oncomplete="confirmacao.show()" process="@this"/>			
+					<h:commandButton id="excluir" value="excluir" >		
+							
+					<h:commandButton />
 				</h:column>					
 			</h:dataTable>
 			

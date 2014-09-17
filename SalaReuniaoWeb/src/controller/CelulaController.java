@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,14 +12,13 @@ import modelo.Celula;
 import service.CelulaService;
 
 @Named
-@RequestScoped
+@ViewScoped
 public class CelulaController implements Serializable {
 
 	private static final long serialVersionUID = 2994828284880212036L;
 
 	private Celula celula;
 	private List<Celula> listCelula;
-
 
 	@Inject
 	private CelulaService celulaService;
@@ -29,7 +28,7 @@ public class CelulaController implements Serializable {
 	}
 	
 	@PostConstruct
-	public void init(){
+	public void init(){	
 		pesquisarCelulas();
 		celula = new Celula();
 	}
