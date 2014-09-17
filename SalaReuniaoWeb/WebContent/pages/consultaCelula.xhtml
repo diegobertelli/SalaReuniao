@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="corpo">
+
+		<!-- start: PAGE HEADER -->
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- start: PAGE TITLE & BREADCRUMB -->
+				<ol class="breadcrumb">
+					<li><i class="clip-radio-checked"></i> <a href="#"> CELULA </a></li>
+				</ol>
+				<div class="page-header">
+					<h1>
+						Lista Celulas
+					</h1>
+				</div>
+				<!-- end: PAGE TITLE & BREADCRUMB -->
+			</div>
+		</div>
+		<!-- end: PAGE HEADER -->
+
+		<h:form id="form">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-external-link-square"></i>
+			</div>
+		
+			<h:dataTable id="lista" value="#{celulaController.listCelula}" class="table table-condensed table-hover"	var="celula">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{celula.nrCelula}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Editar</f:facet>
+					<h:commandButton id="editar" class="fa fa-edit" />	
+				</h:column>
+				<h:column>
+					<f:facet name="header">Excluir</f:facet>
+					<h:commandButton id="excluir" oncomplete="confirmacao.show()" process="@this"/>			
+				</h:column>					
+			</h:dataTable>
+			
+		</div>
+		
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+</html>

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head></h:head>
 <h:body>
@@ -15,22 +16,24 @@
 	</ol>
 
 	<h:form id="form">
-		<h:dataTable id="lista" value="#{celulaController.listCelula}" var="celula">
+		<h:dataTable id="lista" value="#{celulaController.listCelula}"	var="celula">
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{celula.nrCelula}" />
-            </h:column>
-            <h:column>
+			</h:column>
+			<h:column>
 				<f:facet name="header">Editar</f:facet>
 				<h:outputText value="#{celula.nrCelula}" />
-            </h:column>
-            <h:column>
+			</h:column>
+			<h:column>
 				<f:facet name="header">Excluir</f:facet>
 				<h:outputText value="#{celula.nrCelula}" />
-            </h:column>
-          
-               
+			</h:column>
+			<h:commandButton id="excluir" value="excluir" icon="ui-icon-trash" oncomplete="confirmacao.show()" process="@this">
+				
+			</h:commandButton>
 		</h:dataTable>
+		
 	</h:form>
 
 </h:body>

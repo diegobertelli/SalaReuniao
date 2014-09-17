@@ -1,5 +1,6 @@
 package service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -9,7 +10,9 @@ import modelo.Celula;
 import dao.CelulaDao;
 
 @Stateless
-public class CelulaServiceImpl implements CelulaService {
+public class CelulaServiceImpl implements CelulaService, Serializable {
+
+	private static final long serialVersionUID = -3896848825369182805L;
 	
 	@Inject
 	CelulaDao celulaDao;
